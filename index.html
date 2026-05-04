@@ -3,35 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RevAis - 口コミ返信を、もっとスマートに</title>
-  <meta name="description" content="飲食店オーナーの口コミ返信業務を効率化するSaaSツール。Googleビジネスプロフィールの口コミを自動取得し、ワンクリックで返信。">
+  <title>RevAis — Googleレビューで悩まない。あなたの脳を、本業へ。</title>
+  <meta name="description" content="飲食店向けGoogleレビューAI自動返信SaaS。即レスじゃない、人間らしいタイミングで返信。あなたの書き方を学ぶAIで、お店の個性は消えません。月4,980円から、14日間無料体験。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://revais.jp/">
-  <meta property="og:title" content="RevAis - 口コミ返信を、もっとスマートに">
-  <meta property="og:description" content="飲食店オーナーの口コミ返信業務を効率化するSaaSツール。">
+  <meta property="og:title" content="RevAis — Googleレビューで悩まない。あなたの脳を、本業へ。">
+  <meta property="og:description" content="飲食店向けGoogleレビューAI自動返信SaaS。月4,980円から、14日間無料体験。">
   <meta property="og:url" content="https://revais.jp/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
-  <meta property="og:image" content="https://revais.jp/assets/revais-logo-512.png">
+  <meta property="og:image" content="https://revais.jp/assets/lp/v2/01_hero.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blue:      #2563eb;
-      --blue-dark: #1d4ed8;
-      --blue-soft: #eff6ff;
-      --text:      #111827;
-      --text-sub:  #6b7280;
-      --bg:        #ffffff;
-      --border:    #e5e7eb;
-      --radius:    12px;
-      --max-w:     1080px;
+      --navy:        #1e3a5f;
+      --navy-dark:   #0f1f3a;
+      --navy-deep:   #0a1428;
+      --orange:      #ff7e3d;
+      --orange-dark: #e66830;
+      --orange-soft: #fff4ee;
+      --white:       #ffffff;
+      --bg:          #f8f9fb;
+      --bg-card:     #ffffff;
+      --gray-light:  #e5e7eb;
+      --gray-text:   #4b5563;
+      --gray-soft:   #9ca3af;
+      --text:        #1e3a5f;
+      --radius-card: 20px;
+      --radius-sm:   12px;
+      --max-w:       1200px;
+      --shadow-sm:   0 4px 16px rgba(15, 31, 58, 0.06);
+      --shadow-md:   0 12px 40px rgba(15, 31, 58, 0.08);
+      --shadow-lg:   0 20px 60px rgba(15, 31, 58, 0.12);
     }
 
     html { scroll-behavior: smooth; }
@@ -40,344 +50,348 @@
       font-family: 'Inter', 'Noto Sans JP', -apple-system, sans-serif;
       color: var(--text);
       background: var(--bg);
-      line-height: 1.8;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    a { color: inherit; text-decoration: none; }
 
     /* ── Header ── */
     .header {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(248, 249, 251, 0.85);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.6);
     }
 
     .header-inner {
       max-width: var(--max-w);
       margin: 0 auto;
-      padding: 16px 24px;
+      padding: 14px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-size: 22px;
       font-weight: 700;
-      color: var(--blue);
-      text-decoration: none;
+      color: var(--navy);
       letter-spacing: -0.5px;
+      transition: opacity 0.2s;
     }
 
-    .logo span { color: var(--text); }
+    .logo:hover { opacity: 0.8; }
+    .logo img { width: 36px; height: 36px; }
 
     .header-cta {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
-      color: var(--blue);
-      text-decoration: none;
-      border: 1.5px solid var(--blue);
-      padding: 8px 20px;
+      color: var(--white);
+      background: var(--orange);
+      padding: 10px 22px;
       border-radius: 100px;
-      transition: background 0.2s, color 0.2s;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(255, 126, 61, 0.25);
     }
 
-    .header-cta:hover { background: var(--blue); color: #fff; }
+    .header-cta:hover {
+      background: var(--orange-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(255, 126, 61, 0.35);
+    }
 
     /* ── Section common ── */
-    section { padding: 80px 24px; }
+    .section {
+      padding: 80px 24px;
+      position: relative;
+    }
 
     .section-inner {
       max-width: var(--max-w);
       margin: 0 auto;
+      position: relative;
     }
 
     .section-label {
+      display: block;
       font-size: 12px;
       font-weight: 600;
-      letter-spacing: 0.12em;
-      color: var(--blue);
+      letter-spacing: 0.18em;
+      color: var(--orange);
       text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-size: 28px;
-      font-weight: 700;
-      line-height: 1.4;
-      margin-bottom: 16px;
-    }
-
-    /* ── Hero ── */
-    .hero {
-      padding: 100px 24px 80px;
-      text-align: center;
-      background: linear-gradient(180deg, var(--blue-soft) 0%, var(--bg) 100%);
-    }
-
-    .hero-inner {
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-size: 36px;
-      font-weight: 700;
-      line-height: 1.4;
       margin-bottom: 24px;
-      letter-spacing: -0.5px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    .hero p {
-      font-size: 16px;
-      color: var(--text-sub);
-      margin-bottom: 40px;
-      line-height: 1.9;
+    .section.in-view .section-label {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .btn-primary {
-      display: inline-block;
-      background: var(--blue);
-      color: #fff;
-      font-family: inherit;
-      font-size: 16px;
-      font-weight: 600;
-      text-decoration: none;
-      border: none;
-      padding: 16px 40px;
-      border-radius: 100px;
+    /* Section image card */
+    .section-image {
+      width: 100%;
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.3s ease;
+    }
+
+    .section.in-view .section-image {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-image:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    .clickable-card {
       cursor: pointer;
-      transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
-      box-shadow: 0 4px 14px rgba(37,99,235,0.25);
+      display: block;
     }
 
-    .btn-primary:hover { background: var(--blue-dark); box-shadow: 0 6px 20px rgba(37,99,235,0.35); }
-    .btn-primary:active { transform: scale(0.98); }
-
-    /* ── Features ── */
-    .features { background: var(--bg); }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 48px;
+    /* ── Hero (first section) ── */
+    .section-hero {
+      padding-top: 56px;
+      padding-bottom: 56px;
     }
 
-    .feature-card {
-      background: #fafbfc;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 36px 28px;
+    /* ── Final CTA section ── */
+    .section-final {
+      padding-top: 56px;
+      padding-bottom: 96px;
     }
 
-    .feature-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--blue-soft);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .feature-icon svg { width: 24px; height: 24px; color: var(--blue); }
-
-    .feature-card h3 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .feature-card p {
-      font-size: 14px;
-      color: var(--text-sub);
-      line-height: 1.8;
-    }
-
-    /* ── Pricing ── */
-    .pricing {
-      background: var(--blue-soft);
-      text-align: center;
-    }
-
-    .pricing-card {
-      display: inline-block;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 48px 56px;
-      margin-top: 40px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    }
-
-    .pricing-card .price {
-      font-size: 48px;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.2;
-    }
-
-    .pricing-card .price-unit {
-      font-size: 16px;
-      font-weight: 500;
-      color: var(--text-sub);
-    }
-
-    .pricing-card .price-tax {
-      font-size: 13px;
-      color: var(--text-sub);
-      margin-top: 4px;
-    }
-
-    .pricing-card .price-note {
-      font-size: 14px;
-      color: var(--text-sub);
-      margin-top: 20px;
-    }
-
-    /* ── CTA ── */
-    .cta {
-      text-align: center;
-      background: var(--bg);
-    }
-
-    .cta .section-title { margin-bottom: 32px; }
+    /* Section divider transitions */
+    .section + .section { padding-top: 40px; }
+    .section-hero + .section { padding-top: 40px; }
 
     /* ── Footer ── */
     .footer {
-      background: #f9fafb;
-      border-top: 1px solid var(--border);
-      padding: 32px 24px;
+      background: var(--navy-deep);
+      color: var(--white);
+      padding: 56px 24px 36px;
+      margin-top: 24px;
     }
 
     .footer-inner {
       max-width: var(--max-w);
       margin: 0 auto;
       display: flex;
+      flex-wrap: wrap;
+      gap: 20px 32px;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-brand img {
+      width: 36px;
+      height: 36px;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+    }
+
+    .footer-brand-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: -0.3px;
     }
 
     .footer-copy {
-      font-size: 13px;
-      color: var(--text-sub);
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 2px;
+      font-weight: 400;
+      letter-spacing: 0;
     }
 
     .footer-links {
       display: flex;
-      gap: 24px;
+      flex-wrap: wrap;
+      gap: 14px 24px;
     }
 
     .footer-links a {
       font-size: 13px;
-      color: var(--text-sub);
-      text-decoration: none;
+      color: rgba(255,255,255,0.75);
       transition: color 0.2s;
     }
 
-    .footer-links a:hover { color: var(--text); }
+    .footer-links a:hover { color: var(--orange); }
+
+    .footer-disclaimer {
+      max-width: var(--max-w);
+      margin: 36px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.7;
+    }
 
     /* ── Modal ── */
     .modal-overlay {
-      display: none;
       position: fixed;
       inset: 0;
+      background: rgba(15, 31, 58, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       z-index: 100;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px);
-      align-items: center;
+      display: none;
+      align-items: flex-start;
       justify-content: center;
-      padding: 24px;
+      overflow-y: auto;
+      padding: 40px 16px;
+      animation: fadeIn 0.2s ease;
     }
 
     .modal-overlay.active { display: flex; }
 
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
     .modal {
-      background: #fff;
-      border-radius: 16px;
-      width: 100%;
+      background: var(--white);
+      border-radius: var(--radius-card);
       max-width: 520px;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 40px 32px;
+      width: 100%;
+      padding: 44px 36px 36px;
       position: relative;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     .modal-close {
       position: absolute;
       top: 16px;
       right: 16px;
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: var(--text-sub);
-      cursor: pointer;
       width: 36px;
       height: 36px;
+      background: var(--bg);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 22px;
+      color: var(--gray-text);
+      transition: background 0.2s;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
-      transition: background 0.2s;
     }
 
-    .modal-close:hover { background: #f3f4f6; }
+    .modal-close:hover { background: var(--gray-light); }
 
     .modal h2 {
       font-size: 22px;
       font-weight: 700;
+      color: var(--navy);
       margin-bottom: 8px;
+      letter-spacing: -0.5px;
+      line-height: 1.4;
     }
 
-    .modal .modal-sub {
-      font-size: 14px;
-      color: var(--text-sub);
-      margin-bottom: 28px;
+    .modal-sub {
+      font-size: 13px;
+      color: var(--gray-text);
+      margin-bottom: 24px;
+      line-height: 1.7;
     }
 
-    .form-group {
-      margin-bottom: 20px;
-    }
+    .form-group { margin-bottom: 16px; }
 
     .form-group label {
       display: block;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      margin-bottom: 6px;
       color: var(--text);
+      margin-bottom: 6px;
     }
 
-    .form-group label .optional {
+    .optional {
+      font-size: 11px;
+      color: var(--gray-soft);
       font-weight: 400;
-      font-size: 12px;
-      color: var(--text-sub);
       margin-left: 6px;
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--gray-light);
+      border-radius: var(--radius-sm);
       font-family: inherit;
-      font-size: 15px;
-      padding: 12px 14px;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      outline: none;
-      transition: border-color 0.2s;
-      background: #fff;
+      font-size: 14px;
       color: var(--text);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .form-group input:focus,
-    .form-group textarea:focus { border-color: var(--blue); }
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(255, 126, 61, 0.12);
+    }
 
-    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(255, 126, 61, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(255, 126, 61, 0.35);
+    }
 
     .form-submit {
       width: 100%;
@@ -387,143 +401,171 @@
     .form-success {
       display: none;
       text-align: center;
-      padding: 40px 0;
+      padding: 24px 0;
     }
 
     .form-success.active { display: block; }
 
-    .form-success .check-icon {
-      width: 56px;
-      height: 56px;
+    .check-icon {
+      width: 60px;
+      height: 60px;
       background: #ecfdf5;
       border-radius: 50%;
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 16px;
+      margin: 0 auto 20px;
     }
 
     .form-success h3 {
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 700;
-      margin-bottom: 8px;
+      color: var(--navy);
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
     }
 
     .form-success p {
-      font-size: 14px;
-      color: var(--text-sub);
+      font-size: 13px;
+      color: var(--gray-text);
+      line-height: 1.7;
     }
 
     /* ── Responsive ── */
     @media (max-width: 768px) {
-      section { padding: 60px 20px; }
+      .header-inner { padding: 12px 16px; }
+      .logo { font-size: 19px; gap: 8px; }
+      .logo img { width: 30px; height: 30px; }
+      .header-cta { font-size: 12px; padding: 8px 16px; }
 
-      .hero { padding: 72px 20px 60px; }
-      .hero h1 { font-size: 26px; }
-      .hero p { font-size: 15px; }
+      .section { padding: 56px 16px; }
+      .section + .section { padding-top: 28px; }
+      .section-hero { padding-top: 36px; padding-bottom: 36px; }
+      .section-final { padding-top: 36px; padding-bottom: 64px; }
 
-      .features-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
+      .section-label { font-size: 11px; margin-bottom: 18px; }
 
-      .feature-card { padding: 28px 22px; }
+      .section-image { border-radius: 14px; }
 
-      .pricing-card { padding: 36px 28px; width: 100%; }
-      .pricing-card .price { font-size: 40px; }
+      .footer { padding: 40px 16px 24px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .footer-links { gap: 12px 20px; }
+      .footer-disclaimer { margin-top: 28px; padding-top: 20px; }
 
-      .section-title { font-size: 22px; }
+      .modal { padding: 36px 22px 26px; border-radius: 16px; }
+      .modal h2 { font-size: 19px; }
+    }
 
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .modal { padding: 32px 20px; }
+    @media (max-width: 480px) {
+      .section-image { border-radius: 12px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- ── Header ── -->
   <header class="header">
     <div class="header-inner">
-      <a href="/" class="logo">Rev<span>Ais</span></a>
+      <a href="/" class="logo">
+        <img src="/assets/revais-logo-256.png" alt="RevAis">
+        <span>RevAis</span>
+      </a>
+      <a href="#" class="header-cta" data-contact>14日間無料で試す</a>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-inner">
-      <h1>口コミ返信を、もっとスマートに</h1>
-      <p>飲食店オーナーの口コミ返信業務を効率化するSaaSツールです。<br>オーナーが確認して投稿する安心・安全な仕組みで、<br>大切なお客様との関係を守ります。</p>
-      <a href="#" class="btn-primary" data-contact>お問い合わせはこちら</a>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section class="features" id="features">
+  <!-- ── Hero ── -->
+  <section class="section section-hero" data-reveal>
     <div class="section-inner">
-      <div class="section-label">Features</div>
-      <div class="section-title">RevAisが選ばれる理由</div>
-      <div class="features-grid">
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-          </div>
-          <h3>口コミを自動取得</h3>
-          <p>Googleビジネスプロフィールの口コミをリアルタイムで取得。見逃しがなくなります。</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 11 12 14 22 4"/>
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-            </svg>
-          </div>
-          <h3>返信文をワンクリックで投稿</h3>
-          <p>返信文の提案をもとに、オーナーが確認してワンクリックで投稿できます。</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-            </svg>
-          </div>
-          <h3>クレームは即時通知</h3>
-          <p>問題のある口コミを検知したらLINEまたはメールで即座にお知らせ。大切な場面を見逃しません。</p>
-        </div>
-
-      </div>
+      <a href="#" class="clickable-card" data-contact aria-label="14日間無料で試す">
+        <img class="section-image" src="/assets/lp/v2/01_hero.png" alt="Googleレビューで悩まない。あなたの脳を、本業へ。あなたが書かなくても、AIが24時間レビュー対応。">
+      </a>
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section class="pricing" id="pricing">
+  <!-- ── Problem ── -->
+  <section class="section" data-reveal>
     <div class="section-inner">
-      <div class="section-label">Pricing</div>
-      <div class="section-title">シンプルな料金プラン</div>
-      <div class="pricing-card">
-        <div class="price">4,980<span class="price-unit">円/月</span></div>
-        <div class="price-tax">（税込）</div>
-        <div class="price-note">まずはお問い合わせください</div>
-        <div style="margin-top:28px;">
-          <a href="#" class="btn-primary" data-contact>お問い合わせはこちら</a>
-        </div>
-      </div>
+      <span class="section-label">Problem</span>
+      <img class="section-image" src="/assets/lp/v2/02_problem.png" alt="静かに、でも確かに、消えていく時間の積み重ね。レビュー1件の返信に3〜5分。月10件で30分以上、20件で1時間以上。奪われているのは書く時間だけじゃない、あなたの脳のリソースそのもの。">
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ── How it works ── -->
+  <section class="section" data-reveal>
+    <div class="section-inner">
+      <span class="section-label">How it works</span>
+      <img class="section-image" src="/assets/lp/v2/03_how.png" alt="悩みから解放されるまで、たった1分。Step 1：登録（30秒・店舗情報を1つ入力するだけ）。Step 2：Googleと連携（1分・ワンクリックでGBP連携）。Step 3：あとは、AIに任せる（24時間自動でレビュー対応）。">
+    </div>
+  </section>
+
+  <!-- ── Feature 01 ── -->
+  <section class="section" data-reveal>
+    <div class="section-inner">
+      <span class="section-label">Feature 01</span>
+      <img class="section-image" src="/assets/lp/v2/04_feature01_modes.png" alt="「最初は、星5でも怖い」。すべての星評価（1〜5）に対して、「自動返信」か「確認モード」を選べます。最初は全部確認モードでもOK。慣れた星から自動返信に切り替え。あなたのペースで、AIに任せる範囲を広げてください。">
+    </div>
+  </section>
+
+  <!-- ── Feature 02 ── -->
+  <section class="section" data-reveal>
+    <div class="section-inner">
+      <span class="section-label">Feature 02</span>
+      <img class="section-image" src="/assets/lp/v2/05_feature02_learning.png" alt="あなたの書き方を、AIが学ぶ。語尾、改行、絵文字、呼びかけ方──これらが、お店の個性。RevAisは過去の返信からあなたの書き方を学習。AIに任せても、お店の個性は消えない。">
+    </div>
+  </section>
+
+  <!-- ── Feature 03 ── -->
+  <section class="section" data-reveal>
+    <div class="section-inner">
+      <span class="section-label">Feature 03</span>
+      <img class="section-image" src="/assets/lp/v2/06_feature03_mobile.png" alt="即レスじゃない。それが、人間らしさ。即レスはAIっぽくて不自然。RevAisは営業終了後の自然なタイミングで自動送信。「確認モード」を選んだレビューは、AI返信案①／②／自分で書く、の3択でスマホで判断するだけ。">
+    </div>
+  </section>
+
+  <!-- ── Feature 04 ── -->
+  <section class="section" data-reveal>
+    <div class="section-inner">
+      <span class="section-label">Feature 04</span>
+      <img class="section-image" src="/assets/lp/v2/07_feature04_dashboard.png" alt="全レビューに、漏れなく対応。星1から星5まで24時間自動返信。無言の星1にも、冷静に答える。食中毒・異物・やけど・虫・訴える等の爆弾ワードを検知したら、即時アラート。あなたが見落としても、AIが守ります。">
+    </div>
+  </section>
+
+  <!-- ── After ── -->
+  <section class="section" data-reveal>
+    <div class="section-inner">
+      <span class="section-label">After</span>
+      <img class="section-image" src="/assets/lp/v2/08_after.png" alt="時間泥棒のいない夜が、始まる。「あ、レビュー来てたな」と気にすることもなくなる。寝る前に明日の返信を考えなくていい。あなたの脳は、料理に、経営に、家族との時間に、本来集中すべきところに戻っていく。それが、RevAisが届けたい世界です。">
+    </div>
+  </section>
+
+  <!-- ── Other Features ── -->
+  <section class="section" data-reveal>
+    <div class="section-inner">
+      <span class="section-label">Other Features</span>
+      <img class="section-image" src="/assets/lp/v2/09_other_features.png" alt="お店の顔を、AIが守り続ける。爆弾ワード検知・閉店後の自動送信・返信トーン設定・月次レポート、4つの補完機能。">
+    </div>
+  </section>
+
+  <!-- ── Final CTA ── -->
+  <section class="section section-final" data-reveal>
+    <div class="section-inner">
+      <a href="#" class="clickable-card" data-contact aria-label="14日間無料で試す">
+        <img class="section-image" src="/assets/lp/v2/10_final_cta.png" alt="もう、奪われない。あなたが書かなくても、AIが24時間レビュー対応。あなたの脳は、本業へ。14日間無料で試す。クレジットカード不要・いつでも解約可能。">
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-copy">&copy; 2026 RevAis Lab</div>
+      <div class="footer-brand">
+        <img src="/assets/revais-logo-256.png" alt="RevAis">
+        <div>
+          <div class="footer-brand-text">RevAis</div>
+          <div class="footer-copy">© 2026 RevAis Lab</div>
+        </div>
+      </div>
       <div class="footer-links">
         <a href="/privacy">プライバシーポリシー</a>
         <a href="/terms">利用規約</a>
@@ -531,10 +573,13 @@
         <a href="#" data-contact>お問い合わせ</a>
       </div>
     </div>
+    <p class="footer-disclaimer">
+      ※ 本ページに掲載の引用データは、各種調査・業界統計に基づくものです。個別店舗での効果を保証するものではありません。
+    </p>
   </footer>
 
-  <!-- Contact Modal -->
-  <div class="modal-overlay" id="modal">
+  <!-- ── Contact Modal ── -->
+  <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal">
       <button class="modal-close" id="modal-close" aria-label="閉じる">&times;</button>
 
@@ -544,12 +589,12 @@
         <input type="hidden" name="_next" value="https://revais.jp/">
         <input type="text" name="_honey" style="display:none">
 
-        <h2>お問い合わせ</h2>
-        <p class="modal-sub">下記フォームにご記入ください。担当者よりご連絡いたします。</p>
+        <h2 id="modal-title">14日間無料で始める</h2>
+        <p class="modal-sub">下記フォームにご記入ください。担当者より折り返しご連絡いたします。クレジットカード不要・いつでも解約可能です。</p>
 
         <div class="form-group">
           <label for="store">店舗名</label>
-          <input type="text" id="store" name="store" required placeholder="例：レストランRevAis">
+          <input type="text" id="store" name="store" required placeholder="例：トラットリア ルーチェ">
         </div>
 
         <div class="form-group">
@@ -587,7 +632,7 @@
   </div>
 
   <script>
-    // Modal
+    /* ── Modal ── */
     const modal = document.getElementById('modal');
     const form = document.getElementById('contact-form');
     const success = document.getElementById('form-success');
@@ -611,7 +656,7 @@
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-    // Form submit via fetch
+    /* ── Form submit via fetch ── */
     form.addEventListener('submit', async e => {
       e.preventDefault();
       const data = new FormData(form);
@@ -621,6 +666,18 @@
       form.style.display = 'none';
       success.classList.add('active');
     });
+
+    /* ── Scroll reveal ── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
   </script>
 
 </body>

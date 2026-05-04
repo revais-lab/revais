@@ -1,1 +1,5 @@
 .vercel
+
+# LP v2 — 本番不要ファイル
+assets/lp/v2/_LP_all_in_one.*
+assets/lp/v2/archive/
